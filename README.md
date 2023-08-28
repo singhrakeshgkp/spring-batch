@@ -39,3 +39,5 @@
         jdbc:
           initialize-schema: ALWAYS 
 ```
+- Now run the application and go to postgress cli and check the schema using command ```\d``` command, schema shema should be created.
+- 
