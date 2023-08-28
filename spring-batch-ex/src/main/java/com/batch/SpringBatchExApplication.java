@@ -1,6 +1,8 @@
 package com.batch;
 
+import java.util.Date;
 import java.util.UUID;
+import javax.sql.DataSource;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameter;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -20,6 +22,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
@@ -32,9 +35,12 @@ public class SpringBatchExApplication {
   @Bean
   ApplicationRunner runner(JobLauncher jobLauncher, Job job){
     return args -> {
+      var today = new Date();
+      var dateStr = today.getDay()+"_" + today.getMonth()+"_"+today.getYear();
       var jobParameters =
           new JobParametersBuilder()
-              .addString("uniqueId", UUID.randomUUID().toString())
+              //.addDate("date", today)//run job multiple times as by the time we run the application time will change
+              .addString("dateStr",dateStr)// run once a day
               .toJobParameters();
       var run = jobLauncher.run(job, jobParameters);
       var instanceId = run.getJobInstance().getInstanceId();
@@ -43,9 +49,9 @@ public class SpringBatchExApplication {
   }
   @Bean
   @StepScope
-  Tasklet tasklet(@Value("#{jobParameters['uniqueId']}") String uniqueId){
+  Tasklet tasklet(@Value("#{jobParameters['date']}") String date){
     return (contribution, chunkContext) -> {
-      System.out.println("Hello world uniqueId = "+uniqueId);
+      System.out.println("Hello world date = "+date);
       return RepeatStatus.FINISHED;
     };
   }
@@ -56,12 +62,17 @@ public class SpringBatchExApplication {
   }
 
   @Bean
-  Step step1(
+  Step step(
       JobRepository jobRepository,
       Tasklet tasklet,
       PlatformTransactionManager platformTransactionManager) {
     return new StepBuilder("step1", jobRepository)
         .tasklet(tasklet, platformTransactionManager)
         .build();
+  }
+
+  @Bean
+  JdbcTemplate template(DataSource dataSource){
+    return new JdbcTemplate(dataSource);
   }
 }
