@@ -15,10 +15,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
-public class SpringBatchBasicApplication {
+public class SpringBatchExApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBatchBasicApplication.class, args);
+		SpringApplication.run(SpringBatchExApplication.class, args);
 	}
 
   @Bean
@@ -30,13 +30,17 @@ public class SpringBatchBasicApplication {
   }
 
   @Bean
-  Job job(JobRepository jobRepository, Step step){
-    return  new JobBuilder("job",jobRepository).start(step).build();
+  Job job(JobRepository jobRepository, Step step) {
+    return new JobBuilder("job", jobRepository).start(step).build();
   }
 
   @Bean
-  Step step1(JobRepository jobRepository, Tasklet tasklet, PlatformTransactionManager platformTransactionManager){
-    return  new StepBuilder("step1", jobRepository).tasklet(tasklet,platformTransactionManager).build();
+  Step step1(
+      JobRepository jobRepository,
+      Tasklet tasklet,
+      PlatformTransactionManager platformTransactionManager) {
+    return new StepBuilder("step1", jobRepository)
+        .tasklet(tasklet, platformTransactionManager)
+        .build();
   }
-
 }
