@@ -38,4 +38,4 @@
     batch:
       jdbc:
         initialize-schema: ALWAYS 
-``` yml
+```
