@@ -4,6 +4,7 @@
 - [Spring Batch Basic](#spring-batch-basic)
   - [DB Setup](#db-setup)
   - [Project Setup](#project-setup)
+  - [001 Spring Batch Hello world](001-spring-batch-hello-world)
 
 ## Reference
 - Josh Long Batch series YT video, Spring Batch Official Documentation..etc.
@@ -40,4 +41,19 @@
           initialize-schema: ALWAYS 
 ```
 - Now run the application and go to postgress cli and check the schema using command ```\d``` command, schema shema should be created.
-- 
+
+## 001 Spring Batch Hello world
+
+### Spring Batch Default Behaviour 
+<p>
+  By default spring batch run the job automatically for us, it keep track of the job in the generated tables, for example ```batch_job_execution``` ... etc
+</p>
+- Go to ```SpringBatchExApplication``` and define ```Tasklet, Job and Step``` bean respectively.  In tasklet bean print ```Hello World```
+- Run the application multiple times, hello world will be printed first time only rest of the time it will not print as task has already been executed.
+
+### Override the default behaviour
+- To instruct the spring not to run the job automatically use below configuration in application.yml file.
+  ```
+  spring.batch.job.enabled=false
+  ```
+- Now run the application and observe the console and job execution table, you will observe the job would not run.
