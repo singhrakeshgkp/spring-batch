@@ -4,7 +4,7 @@
 - [Spring Batch Basic](#spring-batch-basic)
   - [DB Setup](#db-setup)
   - [Project Setup](#project-setup)
-  - [001 Spring Batch Hello world](001-spring-batch-hello-world)
+  - [001 Spring Batch Hello world](#001-spring-batch-hello-world)
 
 ## Reference
 - Josh Long Batch series YT video, Spring Batch Official Documentation..etc.
