@@ -102,4 +102,4 @@
 ## 003 Spring Batch Hello world
 <p>Running job on a given duration for example dailly once</p>
 
-- Running job completely depends on the job parameter if job parameter is unique, job will run each time, if not it will end up with message ```Job already run```
+- Running job completely depends on the job parameter if job parameter is unique, job will run each time, if not it will end up with message ```Job instance already exist```
