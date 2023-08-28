@@ -1,10 +1,12 @@
 # Table of contents
+- [Reference](#reference)
 - [Tech Stack](#tech-stack)
 - [Spring Batch Basic](#spring-batch-basic)
   - [DB Setup](#db-setup)
   - [Project Setup](#project-setup)
 
-
+## Reference
+- Josh Long Batch series YT video, Spring Batch Official Documentation..etc.
 ## Tech Stack
 - Spring Boot
 - Spring Batch
@@ -26,4 +28,14 @@
    - Postgres sql
    - JDBC
 
-
+- Specify the following properties in ```application.yml``` file.
+  /**
+     spring:
+  datasource:
+    password: postgres
+    username: postgres
+    url: jdbc:postgresql://localhost/postgres
+  batch:
+    jdbc:
+      initialize-schema: ALWAYS 
+*/
