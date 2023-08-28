@@ -29,7 +29,7 @@
    - JDBC
 
 - Specify the following properties in ```application.yml``` file.
- ``` /**
+ ``` yml
        spring:
     datasource:
       password: postgres
@@ -38,4 +38,4 @@
     batch:
       jdbc:
         initialize-schema: ALWAYS 
-``` */
+``` yml
