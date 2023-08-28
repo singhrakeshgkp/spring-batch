@@ -51,6 +51,7 @@
   By default spring batch run the job automatically for us, it keep track of the job in the generated tables, for example ```batch_job_execution``` ... etc
 
 </p>
+
 - Go to ```SpringBatchExApplication``` and define ```Tasklet, Job and Step``` bean respectively.  In tasklet bean print ```Hello World```
 - Run the application multiple times, hello world will be printed first time only rest of the time it will not print as task has already been executed.
 
