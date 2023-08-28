@@ -86,3 +86,13 @@
     };
   }
   
+- Make the following changes in order to include the unique generated id in the console message.
+```java
+  @Bean
+  @StepScope
+  Tasklet tasklet(@Value("#{jobParameters['uniqueId']}") String uniqueId){
+    return (contribution, chunkContext) -> {
+      System.out.println("Hello world uniqueId = "+uniqueId);
+      return RepeatStatus.FINISHED;
+    };
+  }
