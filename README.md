@@ -29,13 +29,13 @@
    - JDBC
 
 - Specify the following properties in ```application.yml``` file.
-  /**
-     spring:
-  datasource:
-    password: postgres
-    username: postgres
-    url: jdbc:postgresql://localhost/postgres
-  batch:
-    jdbc:
-      initialize-schema: ALWAYS 
-*/
+ ``` /**
+       spring:
+    datasource:
+      password: postgres
+      username: postgres
+      url: jdbc:postgresql://localhost/postgres
+    batch:
+      jdbc:
+        initialize-schema: ALWAYS 
+``` */
