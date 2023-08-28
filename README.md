@@ -5,6 +5,8 @@
   - [DB Setup](#db-setup)
   - [Project Setup](#project-setup)
   - [001 Spring Batch Hello world](#001-spring-batch-hello-world)
+  - [002 Spring Batch Hello world](#001-spring-batch-hello-world)
+
 
 ## Reference
 - Josh Long Batch series YT video, Spring Batch Official Documentation..etc.
@@ -61,3 +63,26 @@
   spring.batch.job.enabled=false
   ```
 - Now run the application and observe the console and job execution table, you will observe the job would not run.
+
+##  002 Spring Batch Hello world
+
+<p>Run the job each time we start the application</p>
+
+- Make the following changes to run the job each time we start our application.
+```java
+ @Bean
+  ApplicationRunner runner(JobLauncher jobLauncher, Job job){
+    return new ApplicationRunner() {
+      @Override
+      public void run(ApplicationArguments args) throws Exception {
+        var jobParameters =
+            new JobParametersBuilder()
+                .addString("uniqueId", UUID.randomUUID().toString())
+                .toJobParameters();
+        var run = jobLauncher.run(job, jobParameters);
+        var instanceId = run.getJobInstance().getInstanceId();
+        System.out.println("instance id is : "+instanceId);
+      }
+    };
+  }
+  
