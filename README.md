@@ -30,12 +30,12 @@
 
 - Specify the following properties in ```application.yml``` file.
  ``` yml
-       spring:
-    datasource:
-      password: postgres
-      username: postgres
-      url: jdbc:postgresql://localhost/postgres
-    batch:
-      jdbc:
-        initialize-schema: ALWAYS 
+   spring:
+      datasource:
+        password: postgres
+        username: postgres
+        url: jdbc:postgresql://localhost/postgres
+      batch:
+        jdbc:
+          initialize-schema: ALWAYS 
 ```
