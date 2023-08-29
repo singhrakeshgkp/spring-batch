@@ -7,6 +7,8 @@
   - [001 Spring Batch Hello world](#001-spring-batch-hello-world)
   - [002 Spring Batch Hello world](#002-spring-batch-hello-world)
   - [003 Spring Batch Hello world](#003-spring-batch-hello-world)
+  - [004 SB Persist data](#004-sb-prsist-data)
+  - [005 SB Persist data](#005-sb-persist-data)
 
 
 ## Reference
@@ -103,3 +105,12 @@
 <p>Running job on a given duration for example dailly once</p>
 
 - Running job completely depends on the job parameter if job parameter is unique, job will run each time, if not it will end up with message ```Job instance already exist```
+
+## 004 SB Persist data
+<p>
+  Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean **csvToPostgres** and then run the program, you should be able to see the file content sonsole.
+
+</p>
+
+
+## 005 SB Persist data
