@@ -1,4 +1,7 @@
 spring:
+  sql:
+    init:
+      mode: ALWAYS
   datasource:
     password: postgres
     username: postgres
