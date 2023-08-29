@@ -108,7 +108,7 @@
 
 ## 004 SB Persist data
 <p>
-  Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean ```csvToPostgres``` and then run the program, you should be able to see the file content sonsole.
+  Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean **csvToPostgres** and then run the program, you should be able to see the file content sonsole.
 
 </p>
 
