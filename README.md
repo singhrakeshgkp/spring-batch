@@ -107,7 +107,10 @@
 - Running job completely depends on the job parameter if job parameter is unique, job will run each time, if not it will end up with message ```Job instance already exist```
 
 ## 004 SB Persist data
-<p>Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean ```csvToPostgres``` and then run the program, you should be able to see the file content sonsole.</p>
+<p>
+  Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean ```csvToPostgres``` and then run the program, you should be able to see the file content sonsole.
+
+</p>
 
 
 ## 005 SB Persist data
