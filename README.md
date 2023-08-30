@@ -112,6 +112,7 @@
 ## 005 SB Persist data
 <p>In this section we will define reader and writer bean to persist the data in database</p>
 
+![stack Overflow](/spring-batch-high-level-diagram.png)
 - If something goes wrong spring batch will rollback the complete chunk.
 - We can also configure the policy like if something goes wrong keep going or fail the complete job and run it again.
 - Define reader and writer bean and main application class.
