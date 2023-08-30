@@ -111,4 +111,6 @@
 
 ## 005 SB Persist data
 - If something goes wrong spring batch will rollback the complete chunk.
-- 
+- We can also configure the policy like if something goes wrong keep going or fail the complete job and run it again.
+- Define reader and writer bean and main application class.
+- Run the application and see the ```Books``` table, record should be persisted.
