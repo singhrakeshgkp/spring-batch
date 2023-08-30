@@ -110,7 +110,7 @@
 <p> Here we will follow one approach to read the data from csv but this approach is not recommended way. For this create a bean **csvToPostgres** and then run the program, you should be able to see the file content sonsole.</p>
 
 ## 005 SB Persist data
-<p>In this section we will define reader and writer bean to persist the data in database</p>
+<p>In this section we will define reader and writer bean to persist the data in database. Following is high level diagram of spring batch taken from spring batch official website.</p>
 
 ![stack Overflow](/spring-batch-high-level-diagram.png)
 - If something goes wrong spring batch will rollback the complete chunk.
