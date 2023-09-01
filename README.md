@@ -9,6 +9,7 @@
   - [003 Spring Batch Hello world](#003-spring-batch-hello-world)
   - [004 SB Persist data](#004-sb-prsist-data)
   - [005 SB Persist data](#005-sb-persist-data)
+  - [006 SB Persist data](#006-sb-persist-data)
 
 
 ## Reference
@@ -117,3 +118,8 @@
 - We can also configure the policy like if something goes wrong keep going or fail the complete job and run it again.
 - Define reader and writer bean and main application class.
 - Run the application and see the ```Books``` table, record should be persisted.
+
+## 006 SB Persist data
+- Persist the data in multiple steps.
+- defined error handling for ex. if csv is empty go to eror step.
+- persisted the data in ```books, seller and authors``` tables.
