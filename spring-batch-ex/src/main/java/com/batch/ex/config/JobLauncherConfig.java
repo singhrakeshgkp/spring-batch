@@ -1,4 +1,4 @@
-package com.batch;
+package com.batch.ex.config;
 
 import java.util.Date;
 import org.springframework.batch.core.Job;

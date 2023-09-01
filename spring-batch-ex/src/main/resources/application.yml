@@ -11,3 +11,4 @@ spring:
       initialize-schema: ALWAYS
     job:
       enabled: false
+csvFilePath: file:///Users/rakeshsingh/workspace/proj/spring_batch_proj/spring-batch/spring-batch-ex/src/main/resources/books.csv
